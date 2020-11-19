@@ -26,7 +26,7 @@ if(! $rs){
 
       result: <input name="result" type="text" id="result" value ="<?php echo htmlspecialchars ($rs['result']);?>" /> <br>
 
-      Ssign: <input name="Ssign" type="text" id="Ssign" value ="<?php echo htmlspecialchars ($rs['Ssign']);?>" /> <br>
+      
 	  
       <input type="submit" name="Submit" value="送出" />
 	</form>

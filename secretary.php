@@ -33,7 +33,6 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 	<td>Tsign</td>
 	<td>Scontent</td>
 	<td>result</td>
-	<td>Ssign</td>
   </tr>
 <?php
 while (	$rs=mysqli_fetch_assoc($result)) {//透過while抓取資料
@@ -41,12 +40,12 @@ while (	$rs=mysqli_fetch_assoc($result)) {//透過while抓取資料
 	echo "<td>" . $rs['name'] . "</td>";//the first grid
 	echo "<td>{$rs['type']}</td>";
 	echo "<td>" , $rs['father'], "</td>";//we want to show the content
+	echo "<td>",$rs['mother'], "</td>";	
 	echo "<td>",$rs['status'], "</td>";	
 	echo "<td>",$rs['Tcontent'], "</td>";	
 	echo "<td>",$rs['Tsign'], "</td>";	
 	echo "<td>",$rs['Scontent'], "</td>";
     echo "<td>",$rs['result'], "</td>";		
-	echo "<td>" . $rs['Ssign']   ;
 	echo "<a href = 'secretaryEditForm.php?id={$rs['id']}'> Edit</a>" . 
 	//在status的地方加上超連結的標籤，值是todoset執行值時的接著給他參數:用迴圈fetch抓到的id來用
 	//在status的地方再加上修改
