@@ -6,7 +6,7 @@ if(isset($_GET['m'])){
 }else{
 	$msg="good morning";
 }
-$sql = "select * from student where 1 ";
+$sql = "select * from student where status = 1 ";
 $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -21,7 +21,7 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 <p>Secretary List !! </p>
 <hr />
 <? php echo $msg;?>
-<table width="200" border="1">
+<table width="500" border="1">
   <tr>
     <td>id</td>
     <td>name</td>
@@ -29,10 +29,10 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
     <td>father</td>
 	<td>mother</td>
     <td>status</td>
-	<td>Tcontent</td>
-	<td>Tsign</td>
-	<td>Scontent</td>
+	<td>teacher description</td>
+	<td>suggestion</td>
 	<td>result</td>
+	<td>-</td>
   </tr>
 <?php
 while (	$rs=mysqli_fetch_assoc($result)) {//透過while抓取資料
@@ -43,13 +43,10 @@ while (	$rs=mysqli_fetch_assoc($result)) {//透過while抓取資料
 	echo "<td>",$rs['mother'], "</td>";	
 	echo "<td>",$rs['status'], "</td>";	
 	echo "<td>",$rs['Tcontent'], "</td>";	
-	echo "<td>",$rs['Tsign'], "</td>";	
 	echo "<td>",$rs['Scontent'], "</td>";
-    echo "<td>",$rs['result'], "</td>";		
-	echo "<a href = 'secretaryEditForm.php?id={$rs['id']}'> Edit</a>" . 
-	//在status的地方加上超連結的標籤，值是todoset執行值時的接著給他參數:用迴圈fetch抓到的id來用
-	//在status的地方再加上修改
-	"<a href = 'todoReport.php?id={$rs['id']}'> </a>" . "</td></tr>";
+		echo "<td>",$rs['result'], "</td>";	
+		echo "<td>" , "<a href='secretarySign.php?id={$rs['id']}'> Sign </a>";
+	echo "<a href='secretaryEditForm.php?id={$rs['id']}'> Edit </a> " , "</td></tr>";
 	
 }
 ?>

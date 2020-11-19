@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("dbconnect.php");
-$sql = "select * from student where status = 0;";
+$sql = "select * from student where 1;";
 $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

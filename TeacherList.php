@@ -18,8 +18,8 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 
 <p>Teacher List !! </p>
 <hr />
-導師視訪說明
-<table width="200" border="1">
+導師訪視說明
+<table width="500" border="1">
   <tr>
     <td>id</td>
     <td>name</td>
@@ -27,7 +27,7 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 	<td>father</td>
     <td>mother</td>
 	<td>status</td>
-	<td>Tcontent</td>
+	<td>content</td>
 	<td>-</td>
   </tr>
 <?php
