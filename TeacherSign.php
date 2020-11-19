@@ -1,10 +1,10 @@
 <?php
 require("dbconnect.php");
-$Tcontent=mysqli_real_escape_string($conn,$_POST['Tcontent']);
+$Tsign=mysqli_real_escape_string($conn,$_POST['Tsign']);
 $id=(int)$_POST['id'];
 
 if ($Tcontent) { //if title is not empty
-	$sql = "update student set Tcontent='$Tcontent' where id=$id;";
+	$sql = "update student set Tsign='$Tsign' where id=$id;";
 	mysqli_query($conn, $sql) or die("Insert failed, SQL query error"); //執行SQL
 	$Tsign="Message Added";
 } else {

@@ -16,9 +16,9 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 
 <body>
 
-<p>Teacher List !! </p>
+<p>Principle List !! </p>
 <hr />
-導師視訪說明
+校長簽章
 <table width="200" border="1">
   <tr>
     <td>id</td>
@@ -28,6 +28,8 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
     <td>mother</td>
 	<td>status</td>
 	<td>Tcontent</td>
+	<td>Scontent</td>
+	<td>result</td>
 	<td>-</td>
   </tr>
 <?php
@@ -41,9 +43,10 @@ while (	$rs=mysqli_fetch_assoc($result)) {
 	echo "<td>" , htmlspecialchars($rs['mother']), "</td>";
 	echo "<td>" , $rs['status'],  "</td>" ;
 	echo "<td>" , $rs['Tcontent'], "</td>";
+	echo "<td>" , $rs['Scontent'], "</td>";
+	echo "<td>" , $rs['result'], "</td>";
 	echo "<td>" ;
-	echo "<a href='TeacherAddForm.php?id={$rs['id']}'> Add </a>";
-	echo "<a href='TeacherSign.php?id={$rs['id']}'> Sign </a>";
+	echo "<a href='PrincipleSign.php?id={$rs['id']}'> Sign </a>";
 	echo "</td></tr>";
 }
 ?>

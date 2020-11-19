@@ -17,12 +17,12 @@ if (! $rs) {
 <title>無標題文件</title>
 </head>
 <body>
-<h1>Add New Content</h1>
-<form method="post" action="TeacherAdd.php">
+<h1>Sign</h1>
+<form method="post" action="PrincipleSign.php">
 
 	  <input type='hidden' name='id' value='<?php echo $id ?>'>
 
-      description: <input name="Tcontent" type="text" id="Tcontent" value="<?php echo htmlspecialchars($rs['Tcontent']);?>" /> <br>
+      sign: <input name="Psign" type="int" id="Psign" value="<?php echo htmlspecialchars($rs['Psign']);?>" /> <br>
 
       <input type="submit" name="Submit" value="送出" />
 	</form>
