@@ -3,6 +3,7 @@ session_start();
 require("dbconnect.php");
 
 $sql = "select * from student where status = 2 or 3 order by status ASC";
+
 $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 
 
@@ -19,7 +20,9 @@ $result=mysqli_query($conn,$sql) or die("DB Error: Cannot retrieve message.");
 <p>Principle List !! </p>
 <hr />
 校長簽章
+
 <table width="500" border="1">
+
   <tr>
     <td>id</td>
     <td>name</td>
@@ -46,6 +49,7 @@ while (	$rs=mysqli_fetch_assoc($result)) {
 	echo "<td>" , $rs['Scontent'], "</td>";
 	echo "<td>" , $rs['result'], "</td>";
 	echo "<td>" ;
+
 	if ($rs['status'] == 2)
     echo "<a href='PrincipleSign.php?id={$rs['id']}'> Sign </a> " , "</td></tr>";
   echo "</td></tr>";
@@ -54,4 +58,5 @@ while (	$rs=mysqli_fetch_assoc($result)) {
 ?>
 </table>
 </body>
+
 </html>
